@@ -1,0 +1,68 @@
+<!-- webapp/html/input.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input</title>
+</head>
+<body>
+	<!-- form>table[border="1"]>tr>th[colspan="2"] -->
+	<!-- form>table[border="1]>(tr>th[colspan="2"]{회원가입})
+		 ((tr>td*2)*6)(tr>th[colspan="2"]>input[type="submit", value="제출"])-->
+	<form action="index.html" method="get">
+		<table border="1">
+			<tr>
+				<th colspan="2">회원가입</th>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td>
+					<!-- 
+						 readonly : 수정X 하지만 데이터는 전송됨
+						 disabled : 수정X 데이터 자체도 전송되지 않음.
+				    -->
+					<input type="email" name="email" value="neo.naver.com" readonly />
+				</td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td>
+					<input type="text" name="name" value="네오" readonly />
+				</td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td>
+					<input type="password" name="pw" value="12345" />
+				</td>
+			</tr>
+			<tr>
+				<td>비밀번호 확인</td>
+				<td>
+					<input type="password" value="12345" />
+				</td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td>
+					<!-- input[type="radio" name="gender"]*2 -->
+					<input type="radio" id="male" class="testRed backBlack" name="gender" value="male" />
+					<label for="male">남성</label>
+					<label>						
+	                <input type="radio" name="gender" value="female" checked/>여성
+					</label>
+				</td>
+			</tr>
+			<tr>
+				<td>나이</td>
+				<td>
+					<input type="number" name="age" placeholder="숫자를 입력하세요" required>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="제출"></th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:100px; height: 100px;
+		background: linear-gradient(to right,black,deeppink);
+		position: relative;
+		animation: 2s slide;
+		/*
+			animation-name: slide;
+			animation-duration: 50ms;
+		*/
+		
+		/* 기본값 : 천천히 시작 빨라졌다가 마지막에 다시 느려짐 */
+		animation-timing-function: ease;
+		/*
+			animation 효과 진행 방향
+			normal : 정해진 순서대로 진행 0 ~ 100
+			reverse : 정해진 순서 반대로 진행 100 ~ 0
+			alternate : 정해진 순서대로 진행했다가 반대로 진행
+			alternate-reverse : 반대로 진행 했다가 정해진 순서대로 진행
+		*/
+		border-radius:3%;
+		animation-direction: alternate;
+		animation-iteration-count: infinite;
+		
+	}
+	
+	@keyframes slide{
+		0%{
+			left:0px;
+		}
+		25%{
+			opacity:0.5;
+			transform: rotateY(180deg);
+			left:100px;
+		}
+		50%{
+			transform: rotateY(360deg);
+			left:200px;
+		}
+		75%{
+			opacity:0.75;
+			transform: rotateY(180deg);
+			left:100px;
+		}
+		100%{
+			left:0px;
+		}
+	}
+</style>
+</head>
+<body>
+	<div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+ <!-- webapp/animation/css_animation_word.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.wrap{
+		border: solid 1px black;
+		height: 300px;
+		display: flex;
+		/* 자식 요소의 가로축 정렬 */
+		justify-content: center;
+		/* 자식 요소의 세로축 정렬 */
+		align-items: center;
+	}
+	.word{
+		text-align: center;
+		width:80px;
+		border:solid 1px black;
+		background:linear-gradient(red 0%,orange 17%,yellow 34%,green 51%
+					,blue 67%,navy 84%,purple 100%);
+		animation: rotateY 1s linear infinite alternate;
+		color:white;
+		text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+	}
+	@keyframes rotateY{
+		0%{
+			transform: rotateY(0deg);
+		}
+		100%{
+			transform: rotateY(180deg);
+		}
+	}
+
+</style>
+</head>
+<body>
+	<!-- div.wrap>div.word{KOREATE} -->
+	<div class="wrap">
+		<div class="word">집가고싶다</div>
+	</div>
+</body>
+</html>

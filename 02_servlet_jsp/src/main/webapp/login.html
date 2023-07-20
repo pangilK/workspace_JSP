@@ -1,0 +1,33 @@
+<!-- webapp/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	window.onload = () => {
+		$("input[name='uid']").focus();
+	};
+</script>
+<style>
+	div{
+		width:500px; height: 500px;
+		margin:auto;
+		margin-top : 130px;
+		display: flex;
+   		flex-direction: column;
+   		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<form action="login" method="post">
+		<div>
+			아이디  <input type="text" name="uid" /> <br />
+			비밀번호  <input type="password" name="upw"/> <br />
+			<input type="submit" value="로그인"/>
+		</div>
+	</form>
+</body>
+</html>

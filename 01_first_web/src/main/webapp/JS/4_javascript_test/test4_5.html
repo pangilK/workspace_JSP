@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+       const random = Math.floor(Math.random() * 100)+1;
+       console.log(random);
+       let temp = 0;
+       while (true) {
+        	const input = prompt("1~100까지의 정수를 입력해주세요.");
+        	
+            if (!isNaN(input)) {
+                const userNumber = Number(input);
+                temp++;
+
+                if (userNumber > random) {
+                    alert("높습니다. 추측횟수 : "+temp);
+                } else if (userNumber < random) {
+                    alert("낮습니다. 추측횟수 : "+temp);
+                } else if (userNumber == random) {
+                    alert(`성공입니다! ${temp}회 만에 맞추셨습니다.`);
+                    break;
+                }
+                
+            } else {
+                alert("숫자를 입력해주세요.");
+            }
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

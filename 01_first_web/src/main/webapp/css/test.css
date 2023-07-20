@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*
+	외부 스타일 시트
+*/
+body{
+	background : linear-gradient(to right,red 0%,orange 17%,yellow 34%,green 51%
+					,blue 67%,navy 84%,purple 100%)
+}
+#div1{
+	margin:auto;
+	width: 500px; height: 500px;
+	background: linear-gradient(black,deeppink);
+	border: solid 0px black;
+	border-radius: 50%;
+}
+
+div *{
+	text-align: center;
+	color:hotpink;
+	text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+}
+
+#div2{
+	margin:auto;
+	width:500px; height: 500px;
+	background: linear-gradient(white,deeppink);
+	border: solid 0px black;
+	border-radius: 50%;
+}
+
+#div2 h2{
+	margin-left:33%;
+}

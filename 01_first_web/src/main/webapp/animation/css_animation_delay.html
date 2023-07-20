@@ -1,0 +1,65 @@
+<!-- webapp/animation/css_animation_delay.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.ball{
+		width:50px;
+		height: 50px;
+		border-radius: 50%;
+		border: solid 1px black;
+		background: linear-gradient(black,deeppink);
+		text-align: center;
+		line-height: 50px;
+		float:left;
+		color:white;
+		margin: 0px 5px;
+		text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+		animation: updown 1.5s infinite ease-in-out alternate;
+		
+	}
+	
+	.ball:nth-child(2){
+		animation-delay:0.2s;
+	}
+	.ball:nth-child(3){
+		animation-delay:0.3s;
+	}
+	.ball:nth-child(4){
+		animation-delay:0.4s;
+	}
+	.ball:nth-child(5){
+		animation-delay:0.5s;
+	}
+	.ball:hover{
+		animation-play-state: paused;
+		cursor:wait;
+	}
+	@keyframes updown{
+		0%{
+			margin-top:0px;
+		}
+		
+		70%{
+			margin-top:200px;
+			opacity: 0.7;
+		}
+		
+		100%{
+			margin-top:180px;
+			opacity: 1;
+		}
+	}
+</style>
+</head>
+<body>
+	<!-- div.ball*5 -->
+	<div class="ball">K</div>
+	<div class="ball">O</div>
+	<div class="ball">R</div>
+	<div class="ball">E</div>
+	<div class="ball">A</div>
+</body>
+</html>

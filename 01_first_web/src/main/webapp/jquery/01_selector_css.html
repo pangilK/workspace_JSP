@@ -1,0 +1,37 @@
+<!-- webapp/jquery/01_selector_css.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		/*
+			let header = document.getElementById("header");
+			header = document.querySelector("#header");
+			header.style.color = "deepPink";
+			header.style.backgroundColor = "hotpink";
+		*/
+		/* $("#header") == document.querySelector('div') */
+		$("#header").css('color','white');
+		$("#header").css('background-color','red');
+		// == document.getElementsByClassName("header");
+		$(".header").css('color','yellow');
+		$(".header").css('background-color','deeppink');
+		// == document.getElementsByTagName("h1");
+		$("h1").css("color","yellow");
+		$("h1").css("background-color","lightgreen");	
+	});
+	
+</script>
+</head>
+<body>
+	<!-- h1{HEADER - $}*4 -->
+	<h1 class="header">HEADER - 1</h1>
+	<h1 class="header">HEADER - 2</h1>
+	<h1 id="header" class="header">HEADER - 3</h1>
+	<h1 id="header">HEADER - 4</h1>
+	
+</body>
+</html>

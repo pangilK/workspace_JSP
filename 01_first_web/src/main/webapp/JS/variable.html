@@ -1,0 +1,35 @@
+<!-- webapp/js/variable.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 변수 선언
+	// var   : global 	전역 변수
+	// let   : local 	블록 내 지역 변수
+	// const : constant 블록 내 지역 상수
+	
+	temp = "천재";
+	console.log(temp);
+	var temp = "최기근";
+	console.log(temp);
+	
+	let temp2 = '김판길';
+	temp2 = '이인';
+	{
+		var tempGlobal = "global variable";
+		let tempLocal = "local variable";
+	}
+	console.log(tempGlobal);
+	// console.log(tempLocal);
+	
+	const pi = 3.141592;
+	console.log(pi);
+	pi = 3.14;
+</script>
+</head>
+<body>
+
+</body>
+</html>

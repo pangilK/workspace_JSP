@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border : solid 1px black;
+        }
+        #call input{
+            width:23%;
+        }
+        .input{
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <th colspan="3">회원가입</th>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td class="input"><input type="text"></td>
+                <td><button>중복검사</button></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td class="input"><input type="password"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>비밀번호확인</td>
+                <td class="input"><input type="password"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="3">주소</td>
+                <td class="input"><input type="text" placeholder="우편확인"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="input"><input type="text" placeholder="주소"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="input"><input type="text" placeholder="상세주소"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>생년원일</td>
+                <td class="input"><input type="text"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td class="input"><input type="text"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td id="call" class="input" >
+                    <input type="text">-
+                    <input type="text">-
+                    <input type="text"></td>
+                <td><button>인증</button></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="회원가입">
+                    <a href="./update.html" target="_blank">
+                        <button type="button">회원정보수정</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

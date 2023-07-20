@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        const input = prompt("라인갯수를 입력하세요.");
+        const num = Number(input);
+        let str = "";
+        let gap = "&nbsp;";
+        
+        for(let i = 1; i <= num; i++){
+            str = "";
+
+            for(let j = 1; j <= num - i; j++){
+                str += gap;
+            }
+    
+            for(let k = 1; k <= 2 * i - 1; k++){
+                str += "*";
+            }
+    
+            document.write(str + "<br>");
+        }
+    
+        for(let i = num - 1; i >= 1; i--){
+            str = "";
+    
+            for(let j = 1; j <= num - i; j++){
+                str += gap;
+            }
+    
+            for(let k = 1; k <= 2 * i - 1; k++){
+                str += "*";
+            }
+            document.write(str + "<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

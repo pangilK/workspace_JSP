@@ -1,0 +1,38 @@
+<!-- webapp/jquery/04_text_html.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		// text() == innerText
+		$("h1:first-child").text("<a href='#'>text()</a>");
+		// html() == innerHTML
+		$("h1:last-child").html("<a href='#'>text()</a>");
+		
+		$("#text").click(function(){
+			let content = $("#target").text();
+			alert(content);
+		});
+		
+		$("#html").click(function(){
+			let content = $("#target").html();
+			alert(content);
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h1>h1 - 1</h1>
+		<h1>h1 - 2</h1>
+	</div>
+	<p id="target">이것은<b> 	하나의 단락</b>입니다.</p>
+	<!-- button#text{text}-->
+	<button id="text">text</button>
+	<!-- button#html{html}-->
+	<button id="html">html</buttonid>
+</body>
+</html>

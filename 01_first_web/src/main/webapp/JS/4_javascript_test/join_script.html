@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loginBox{
+            margin: auto;
+            width : 500px;
+            height: 300px;
+            border : solid 2px black;
+        }
+        div{
+            text-align: right;
+            padding:1px;
+        }
+        div input{
+            margin-right:100px;
+        }
+        h1{
+            text-align: center;
+        }
+        #buttonbox{
+            margin-top: 20px;
+            display:flex;
+            justify-content: center;
+        }
+        #join{
+            margin-right:5px;
+        }
+    </style>
+</head>
+<body>
+ 
+        <div id="loginBox">
+            <div><h1>회원가입</h1></div>
+            <div>아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="id"></div>
+            <div>비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="password" id="pw"></div>
+            <div>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="password" id="repw"></div>
+            <div>생년원일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="birth"></div>
+            <div>이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="name"></div>
+            <div>전화번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="text" id="call"></div>
+            <div id="buttonbox">
+                <button type="button"  onclick="join()" >회원가입</button>
+                <button>정보수정</button>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            function join(){
+                const id = document.getElementById("id");
+                const pw = document.getElementById("pw");
+                const repw = document.getElementById("repw");
+                const birth = document.getElementById("birth");
+                const name = document.getElementById("name");
+                const call = document.getElementById("call");
+    
+                console.log(id.value);
+                if(id.value === ""){
+                    alert("아이디를 입력해주세요.");
+                    id.focus();
+                }else if(pw.value === ""){
+                    alert("비밀번호를 입력해주세요.")
+                    pw.focus();
+                }else if(repw.value === ""){
+                    alert("비밀번호를 한번 더 입력해주세요.")
+                    repw.focus();
+                }else if(birth.value === ""){
+                    alert("생일을 작성해주세요.")
+                    birth.focus();
+                }else if(name.value === ""){
+                    alert("이름을 입력해주세요.")
+                    name.focus();
+                }else if(call.value === ""){
+                    alert("전화번호를 입력해주세요.")
+                    call.focus();
+                }
+    
+                if(pw.value !== repw.value){
+                    alert("비밀번호가 일치하지 않습니다.");
+                    pw.value = "";
+                    repw.value = "";
+                    pw.focus();
+                }
+            }
+        </script>
+</body>
+</html>

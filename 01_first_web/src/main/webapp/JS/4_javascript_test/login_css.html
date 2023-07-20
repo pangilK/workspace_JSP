@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border : solid 1px grey;
+            width : 400px;
+        }
+        #login {
+            text-align: center;
+            position: relative;
+            border:solid 1px black;
+            width:400px;
+            padding-top: 10px;
+            height: 30px;
+            background-color: black;
+            color: white;
+        }
+        .text{
+            width:70px;
+        }
+        .inputtd{
+            width:180px;
+        }
+        .inputtd *{
+            width:95%;
+        }
+        .loginbtn{
+            height: 60px;
+        }
+        .loginbtn *{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <div id="login">
+            로그인
+        </div>
+        <tr>
+            <td class="text">아이디</td>
+            <td class="inputtd">
+                <input type="text" id="id" autofocus tabindex="1">
+            </td>
+            <td rowspan="2" class="loginbtn" >
+                <button tabindex="4">로그인</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="text">패스워드</td>
+            <td class="inputtd">
+                <input type="password" id="pw" tabindex="2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="checkbox" tabindex="3">로그인 정보 기억
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        document.getElementById("id").focus;
+    </script>
+</body>
+</html>

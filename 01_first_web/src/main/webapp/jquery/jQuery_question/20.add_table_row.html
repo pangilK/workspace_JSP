@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+/*
+	
+	시점 : run button click 시
+	기능 : 입력태그에 작성된 제목,내용,작성자를 
+	       table 에 행을 생성하여 추가
+	함수 : val() , append()
+*/
+$(function(){
+	$("#title").focus();
+	
+	$("#title").keydown(function(event){
+		let keyName = event.key;
+		let keyCode = event.keyCode;
+		console.log(`key : ${keyName} , keyCode : ${keyCode}`);
+		if(keyCode == 13){
+			$("#content").focus();
+		}
+	});
+	
+	$("#content").keydown((e)=>{
+		if(e.keyCode == 13){
+			$("#owner").focus();
+		}
+	});
+	
+	$("#owner").keydown((e)=>{
+		if(e.keyCode == 13){
+			// $("#btn").click();
+			document.querySelector("#btn").click();
+		}
+	});
+	
+	
+	$("#btn").click(()=>{
+		let title = $("#title").val();
+		let content = $("#content").val();
+		let owner = $("#owner").val();
+		
+		if(title !== "" && content !== "" && owner !== ""){		
+			$("#table").append(
+				`<tr>
+					<td>${title}</td>
+					<td>${content}</td>
+					<td>${owner}</td>
+				</tr>`);
+			$("input[type='text']").val("");
+			$("#title").focus();
+		}
+		
+		if(title == ""){
+			$("#title").focus();
+			alert("제목을 입력하시오");
+		}else if(content == ""){
+			$("#content").focus();
+			alert("내용을 입력하시오")
+		}else if(owner == ""){
+			$("#owner").focus();
+			alert("작성자를 입력하시오")
+		}
+	})
+	
+	$("#btn2").click(()=>{
+		$("#title").val("");
+		$("#content").val("");
+		$("#owner").val("");
+		$("#title").focus();
+	});
+})
+	</script>
+</head>
+<body>
+	제목 : <input type="text" name="title"  id="title"/><br />
+	내용 : <input type="text" name="content" id="content" /><br />
+	작성자: <input type="text" name="owner" id="owner" /><br />
+	<input type="button" name="btn" id="btn" value="run" />
+	<input type="button" name="btn" id="btn2" value="초기화" />
+	<hr/>
+	<table id="table" width="50%" border="1">
+		<tr>
+			<th>제목</th>
+			<th>내용</th>
+			<th>작성자</th>
+		</tr>
+	</table>
+</body>
+</html>

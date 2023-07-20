@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+	<div>dummy</div>
+	<hr />
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+		Harum eveniet voluptates laudantium cumque dignissimos odit 
+		nemo incidunt veniam quaerat aliquam laboriosam qui aspernatur.
+		 Blanditiis autem rem quaerat eligendi quos unde.</p>
+	<button id="pre">prepend</button>
+	<button id="app">append</button>
+	<button id="before">before</button>
+	<button id="after">after</button>
+	<button id="html">html</button>
+<script>
+	/*
+		특정 대상 요소를 기준으로 content를 동적으로 추가하는 함수
+	*/
+	$("p").css("border","solid 1px black");
+	
+	$("#html").click(function(){
+		$("p").html("<h1>사요나라</h1>");
+	});
+	
+	$("#pre").click(function(){
+		// 해당 태그 요소의 기존 컨텐츠 앞 부분에 추가
+		$("p").prepend("<b>prepend</b>");
+	});
+	
+	$("#app").click(function(){
+		// 해당 태그 요소의 기존 컨텐츠 뒤 부분에 추가
+		$("p").append("<b>append</b>");
+	})
+	
+	$("#before").click(function(){
+		$("p").before("<b>before</b>");
+	})
+	
+	$("#after").click(function(){
+		$("p").after("<b>after</b>");
+	})
+	
+</script>
+</body>
+</html>

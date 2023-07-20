@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(()=>{
+		$("img").click(()=>{
+			$("img").attr('src','resources/img/transform_rotate.png');
+			$("img").animate({
+				rotate : '360deg'
+			},5000);
+		})
+	})
+</script>
+</head>
+<body>
+	<h1>02_servlet_jsp</h1>
+	<a href="login.html">로그인 페이지</a> 
+	<br/>
+	<br/>
+	<a href="choicefruit.html">과일 고르기</a> 
+	<br/>
+	<br/>
+	<img src="resources/img/bonobono.jpg" />
+	<img src="http://localhost:8080/02_servlet_jsp/resources/img/bonobono.jpg" />
+</body>
+</html>

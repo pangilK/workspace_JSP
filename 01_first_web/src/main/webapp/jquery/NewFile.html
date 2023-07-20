@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+	#all{
+		width: 214px;
+    	height: 72px;
+    	border-radius: 30px;
+    	background : linear-gradient(to right,black 0%,deeppink 50%,white 100%)
+		/* background : linear-gradient(to right,red 0%,orange 17%,yellow 34%,green 51%
+				,blue 67%,navy 84%,purple 100%);*/
+	}
+	#all *{
+		float:left;
+	}
+	#tale,#head,#body{
+		background-color:transparent;
+		width: 50px; height: 50px;
+		border : solid 2px black;
+		padding:10px;
+		display:inline-block;
+		margin-left:0;
+		margin-right:0;
+	}
+	#head{
+		display: flex;
+    	align-items: flex-end;
+    	justify-content: space-around;
+    	flex-direction: column;
+
+		border-bottom-right-radius: 30px;
+		border-top-right-radius:30px;
+		text-align:end;
+		border-left:0px;
+	}
+	
+	#body{
+		border-left:0px;
+		border-right:0px;
+	}
+	#tale{
+		border-right:0px;
+		border-bottom-left-radius: 30px;
+		border-top-left-radius:30px;
+	}
+	#eye,#eye2{
+		width:10px;
+		height:10px;
+		background-color: white;
+		border : solid 1px black;
+		border-radius:50%;
+	}
+	.eyeball{
+		width:  5px;
+		height: 5px;
+		background-color: black;
+		border-radius:50%;
+	}
+</style>
+<script>
+	$(()=>{
+		$("#all").animate({
+			marginLeft:'1000px'
+			
+		},10000,null,down)
+		
+		function down(){
+			$("#all").animate({
+				marginTop:'500px',
+				rotate : '90deg'
+			},10000,null)
+			
+			$("#head").animate({
+				
+			},10000)
+		}
+	})
+</script>
+</head>
+<body>
+	<div id="all">
+		<div id="tale"></div>
+		<div id="body"></div>
+		<div id="head">
+			<div id="eye">
+				<div class="eyeball"></div>
+			</div>
+			<div id="eye2">
+				<div class="eyeball"></div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
