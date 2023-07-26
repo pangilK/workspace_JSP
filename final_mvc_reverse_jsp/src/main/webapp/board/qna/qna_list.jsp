@@ -17,7 +17,7 @@
 		<c:if test="${!empty member}">
 			<tr>
 				<th colspan="8" style="text-align:right">
-					<a href="#">질문 작성하러 가기</a>
+					<a href="boardWriteInfo.qna">질문 작성하러 가기</a>
 				</th>
 			</tr>
 		</c:if>
@@ -46,7 +46,7 @@
 										</c:forEach>
 										└>
 									</c:if>
-									<a href="qna_detail.jsp?qna_num=${board.qna_num}">
+									<a href="boardDetail.qna?num=${board.qna_num}">
 									${board.qna_title}
 									</a>
 								</td>

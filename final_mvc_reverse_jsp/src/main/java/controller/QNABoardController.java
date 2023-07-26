@@ -27,13 +27,57 @@ public class QNABoardController extends HttpServlet {
 		System.out.println("command : " + command);
 
 		String nextPage = null;
-
-		if (command.equals("boardList.qna")) {
-			// 질문과 답변 게시물 목록
-			ArrayList<BoardVO> list = qs.getBoardList(request);
-			request.setAttribute("qnaList", list);
-			nextPage = "/board/qna/qna_list.jsp";
+		
+		switch(command) {
+		
+			case "boardList.qna" :
+				ArrayList<BoardVO> list = qs.getBoardList(request);
+				request.setAttribute("qnaList", list);
+				nextPage = "/board/qna/qna_list.jsp";
+				break;
+				
+			case "boardWrite.qna" :
+				qs.boardWrite(request);
+				nextPage = "boardList.qna";
+				break;
+				
+			case "boardWriteInfo.qna" :
+				nextPage = "/board/qna/qna_write.jsp";
+				break;
+				
+			case "boardDetail.qna" :
+				request.setAttribute("qna", qs.getBoardVO(request));
+				qs.updateReadCount(request);
+				nextPage = "/board/qna/qna_detail.jsp";
+				break;
+				
+			case "boardUpdateInfo.qna" :
+				request.setAttribute("qna", qs.getBoardVOByUpdate(request));
+				nextPage = "board/qna/qna_update.jsp";
+				break;
+				
+			case "boardUpdate.qna" :
+				qs.boardUpdate(request, response);
+				request.setAttribute("qna", qs.getBoardVO(request));
+				nextPage = "board/qna/qna_detail.jsp";
+				break;
+			
+			case "boardDelete.qna" :
+				qs.boardDelete(request, response);
+				nextPage = "boardList.qna";
+				break;
+			
+			case "boardReplyInfo.qna" :
+				request.setAttribute("qna",qs.boardReply(request));
+				nextPage = "board/qna/qna_reply.jsp";
+				break;
+				
+			case "boardReply.qna" :
+				qs.boardReplySubmit(request);
+				nextPage = "boardList.qna";
+				break;
 		}
+
 
 		if (nextPage != null && !nextPage.trim().equals("")) {
 			RequestDispatcher rd = request.getRequestDispatcher(nextPage);

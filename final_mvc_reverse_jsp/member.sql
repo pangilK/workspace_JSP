@@ -13,6 +13,9 @@ CREATE TABLE mvc_member(
 select * from mvc_member;
 desc mvc_member;
 
+update qna_board set qna_readcount = qna_readcount + 1 where qna_num = 521;
+commit;
+SELECT * FROM qna_board;
 -- 관리자 계정 추가
 INSERT INTO mvc_member(id,pass,name,age,gender) 
 VALUES('admin','admin','MASTER',0,'male');
@@ -32,7 +35,7 @@ SELECT * FROM digital_member
 WHERE u_id != 'admin' AND u_join = 'Y' 
 ORDER BY u_num DESC;
 
-
+DELETE qna_board where qna_num = 
 /* 
  	공지형 게시판 테이블
  */
@@ -76,6 +79,7 @@ CREATE TABLE IF NOT EXISTS qna_board(
 	qna_re_seq INT NOT NULL DEFAULT 0,			--
 	qna_writer_num INT NOT NULL,				-- 글작성자 회원 번호
 	qna_readcount INT DEFAULT 0,				-- 조회수
+	qna_delete char(1) DEFAULT 'N',
 	qna_date TIMESTAMP DEFAULT now()			-- 글 작성 시간
 );
 
@@ -92,6 +96,9 @@ qna_re_lev INT NOT NULL DEFAULT 0 AFTER qna_re_ref;
 ALTER TABLE qna_board ADD COLUMN 
 qna_re_seq INT NOT NULL DEFAULT 0 AFTER qna_re_lev;
 
+ALTER TABLE qna_board add column
+qna_delete char(1) default = 'N' AFTER qna_readcount;
+
 UPDATE qna_board SET qna_re_ref = qna_num;
 
 SELECT * FROM qna_board;
@@ -100,7 +107,6 @@ DESC qna_board;
 
 -- 게시글 삭제 여부 수정
 ALTER TABLE qna_board qna_delete char(1) DEFAULT 'N' AFTER qna_readcount;
-
 
 -- sample data 추가
 INSERT INTO qna_board(qna_name,qna_title,qna_content,qna_writer_num) 
@@ -113,11 +119,14 @@ SELECT * FROM qna_board;
 
 DELETE FROM qna_board WHERE qna_num = 1;
 
+DROP TABLE qna_board;
+
 commit;
 
 ALTER TABLE qna_board ADD CONSTRAINT fk_qna_writer FOREIGN KEY(qna_writer_num) 
 REFERENCES digital_member(u_num);
 
+delete from qna_board where qna_num = 3;
 INSERT INTO qna_board 
 VALUES(null,'최기근','테스트용 게시글입니다.','냉무',0,0,0,1,0,now());
 SELECT * FROM qna_board ORDER BY qna_num DESC;
